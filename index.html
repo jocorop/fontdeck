@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: blob: https://fonts.gstatic.com; img-src 'self' data: https://ko-fi.com https://storage.ko-fi.com; connect-src 'self' https://fonts.googleapis.com; object-src 'none'; base-uri 'self';">
+  <title>FontDeck - Modern Font Manager & Viewer</title>
+  <meta name="description"
+    content="A powerful, offline-first font manager and viewer. Organize your local and Google fonts with ease. Support for TTF, OTF, WOFF, and more.">
+  <meta name="keywords"
+    content="font manager, font viewer, fontbase alternative, ttf viewer, otf viewer, google fonts, typography, font organizer, local fonts">
+  <meta name="author" content="@jocorop">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FontDeck - Modern Font Manager">
+  <meta property="og:description" content="Organize, preview, and manage your font collection securely offline.">
+  <!-- Social / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FontDeck">
+  <meta name="twitter:description"
+    content="The best offline-first font manager for creatives. Manage local and Google fonts securely.">
+
+  <!-- Mobile & PWA -->
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- JSON-LD Structured Data (Rich Snippets) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "FontDeck",
+      "alternateName": "FontDeck Manager",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web, Windows, macOS, Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "featureList": "Font Management, Local Font Viewer, Google Fonts Integration, Offline First, FontBase Alternative",
+      "description": "A powerful, privacy-focused font manager for organizing local and web fonts.",
+      "author": {
+        "@type": "Person",
+        "name": "jocorop",
+        "url": "https://github.com/jocorop"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- Error Trap Script -->
+  <div id="error-screen"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background: #000; color: red; padding: 20px; display: none; overflow: auto; font-family: monospace;">
+    <h2>Startup Error</h2>
+    <pre id="error-log"></pre>
+  </div>
+  <script>
+    window.onerror = function (msg, url, line, col, error) {
+      document.getElementById('error-screen').style.display = 'block';
+      document.getElementById('error-log').innerText += `\n${msg}\nAt: ${url}:${line}:${col}\nStack: ${error?.stack}`;
+      console.error('Global Error:', msg, error);
+      return false;
+    };
+    window.onunhandledrejection = function (event) {
+      document.getElementById('error-screen').style.display = 'block';
+      document.getElementById('error-log').innerText += `\nUnhandled Rejection: ${event.reason}`;
+    };
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

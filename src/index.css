@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Smooth Color Transition */
+*,
+*::before,
+*::after {
+    transition-property: color, background-color, border-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+:root {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Theme Variables (Professional Dark Mode - FontBase inspired) */
+    --color-bg: #111111;
+    /* Main Content Background */
+    --color-surface: #0a0a0a;
+    /* Sidebar/TopBar Background (Darker) */
+    --color-text: #ffffff;
+    /* Primary Text */
+    --color-muted: #888888;
+    /* Muted Text */
+    --color-accent: #00E676;
+    /* Vibrant Green for Active/Select */
+
+    color-scheme: dark;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+:root[data-theme='light'] {
+    --color-bg: #ffffff;
+    --color-surface: #f5f5f5;
+    --color-text: #111111;
+    --color-muted: #666666;
+    --color-accent: #00b359;
+    /* Darker green for contrast */
+    color-scheme: light;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    min-width: 320px;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}

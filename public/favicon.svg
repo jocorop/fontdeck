@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="32" height="32" rx="0" fill="#111111" />
+  <!-- Background Card -->
+  <rect x="4" y="6" width="20" height="20" rx="4" transform="rotate(-15 14 16)" fill="#00E67644" stroke="#00E676" stroke-width="2" />
+  
+  <!-- Middle Card -->
+  <rect x="6" y="6" width="20" height="20" rx="4" transform="rotate(-5 16 16)" fill="#222" stroke="#ffffff88" stroke-width="2" />
+  
+  <!-- Foreground Card -->
+  <rect x="8" y="6" width="20" height="20" rx="4" transform="rotate(5 18 16)" fill="#00E676" stroke="#00E676" stroke-width="0" />
+  
+  <!-- F hint -->
+  <path d="M16 12H22M16 16H20M16 12V20" stroke="#111" stroke-width="2.5" stroke-linecap="round" transform="rotate(5 18 16) translate(2, 0)" />
+</svg>
