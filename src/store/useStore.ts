@@ -96,7 +96,7 @@ interface AppState {
     closeContextMenu: () => void;
 }
 
-export const useStore = create<AppState>((set, get) => {
+export const useStore = create<AppState>((set, _get) => {
     let toastTimeoutId: ReturnType<typeof setTimeout> | null = null; // To manage toast timeouts
 
     return {
@@ -295,7 +295,7 @@ export const useStore = create<AppState>((set, get) => {
                 // Revive Fonts: Regenerate Blob URLs and Register to Document
                 const revivedFonts = await Promise.all(savedFonts.map(async f => {
                     // Start by validating the file object
-                    if (f.file && (f.file instanceof Blob || f.file instanceof File)) {
+                    if (f.file && f.file instanceof Blob) {
                         // Update: ensure hash exists
                         if (!f.hash) {
                             f.hash = await computeFileHash(f.file);

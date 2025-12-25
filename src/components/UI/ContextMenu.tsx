@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useStore } from '../../store/useStore';
 import { useTranslation } from 'react-i18next';
-import { Layers, Plus, Trash2 } from 'lucide-react';
+import { Layers, Trash2 } from 'lucide-react';
 
 export const ContextMenu: React.FC = () => {
     const { t } = useTranslation();

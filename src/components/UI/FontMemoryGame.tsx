@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '../../store/useStore'; // For accent color
-import { Loader2 } from 'lucide-react';
 
 interface GameProps {
     onWin: () => void;

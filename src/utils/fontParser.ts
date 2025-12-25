@@ -67,7 +67,7 @@ export const parseFontFile = async (file: File): Promise<FontData> => {
                 family: getFontName(font, 'fontFamily'),
                 subfamily: getFontName(font, 'fontSubfamily'),
                 fullName: getFontName(font, 'fullName'),
-                postscriptName: getFontName(font, 'postscriptName'),
+                postscriptName: getFontName(font, 'postScriptName'),
                 format: getFontFormat(file.name),
                 glyphCount: font.numGlyphs,
                 author: getFontName(font, 'designer'),

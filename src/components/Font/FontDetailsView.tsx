@@ -2,7 +2,6 @@ import React, { useMemo, useState } from 'react';
 import { useStore } from '../../store/useStore';
 import { FontRow } from './FontRow';
 import { ArrowLeft, Copy } from 'lucide-react';
-import type { FontData } from '../../types';
 import { useTranslation } from 'react-i18next';
 
 export const FontDetailsView: React.FC = () => {
@@ -225,7 +224,6 @@ const isGlyphSupported = (char: string, fontFamily: string): boolean => {
 
     // We check against multiple fallbacks to be sure the rendered width is unique to the target font.
     // If width(target + fallback) == width(fallback), then it's likely falling back.
-    const fallbacks = ['sans-serif', 'serif', 'monospace'];
 
     // We assume supported if AT LEAST ONE fallback comparison indicates a difference.
     // However, if the font is monospace, it might match monospace fallback width.

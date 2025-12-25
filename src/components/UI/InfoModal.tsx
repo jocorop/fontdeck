@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useStore } from '../../store/useStore';
 import { useTranslation } from 'react-i18next';
-import { X, Github, Coffee, FileText, User } from 'lucide-react';
+import { X, Github, Coffee } from 'lucide-react';
 
 const CHANGELOG_DATA = [
     {

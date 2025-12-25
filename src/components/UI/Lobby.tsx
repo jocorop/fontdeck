@@ -9,7 +9,7 @@ import { useStore } from '../../store/useStore';
 export const Lobby: React.FC = () => {
     const [view, setView] = useState<'idle' | 'game' | 'credits'>('idle');
     const { t } = useTranslation();
-    const { accentColor } = useStore();
+    useStore();
 
     return (
         <div className="absolute inset-0 flex items-center justify-center flex-col p-10 text-center overflow-hidden">

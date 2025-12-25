@@ -72,7 +72,6 @@ export const FontRow: React.FC<FontRowProps> = ({ font, style, hideMetadata }) =
                 style={{
                     ...fontStyle,
                     fontSize: `${previewSize}px`,
-                    fontSize: `${previewSize}px`,
                     direction: isRTL(previewText) ? 'rtl' : 'ltr',
                     textAlign: isRTL(previewText) ? 'right' : 'left'
                 }}

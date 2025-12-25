@@ -63,6 +63,7 @@ export const useGoogleFonts = () => {
                 id: `google-${gf.family}`,
                 file: new File([], gf.family), // No physical file yet
                 url: gf.files.regular || Object.values(gf.files)[0], // Use regular or first available
+                hash: '',
                 metadata: {
                     family: gf.family,
                     subfamily: 'Regular',
